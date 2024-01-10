@@ -8,13 +8,13 @@ const CategoryDetails = () => {
   //Données de remplacement pour les détails de la catégorie
   const categoryDetails = {
     Sport: { name: 'Sport', description: 'Derby Demolition', image: 'derby.jpg' },
-    Musique: { name: 'Musique', description: 'Mozart - Symphony No. 40 in G minor, K. 550 [complete]', image: 'mozartqurantesymphonie.jpg', sound: 'Mozart - Symphony No. 40 in G minor, K. 550 [complete].mp3' },
+    Musique: { name: 'Musique', description: 'Mozart - Symphony No. 40 in G minor, K. 550', image: 'mozartqurantesymphonie.jpg', sound: 'Mozart - Symphony No. 40 in G minor, K. 550 [complete].mp3' },
     Voyage: { name: 'Voyage', description: 'Canada', image: 'canada.jpg' },
   };
 
   const details = categoryDetails[category];
 
-  //Pour mettre un fichier audio mp3 dans la catégorie Musique
+  //Pour mettre les images
   return (
     <div>
       <h2>Détails de la catégorie</h2>
@@ -24,7 +24,7 @@ const CategoryDetails = () => {
           <p>{details.description}</p>
           <img src={`/images/${details.image}`} alt={details.name} />
 
-          {/* Ajoutez le lecteur audio pour le fichier MP3 */}
+          {/*Ajoutez le lecteur audio pour le fichier MP3 -> Bonus*/}
           {details.sound && (
             <audio controls>
               <source src={`/sounds/${details.sound}`} type="audio/mp3" />
@@ -33,11 +33,12 @@ const CategoryDetails = () => {
           )}
         </>
       ) : (
-        <p>Catégorie non trouvée</p>
+        <p>Catégorie non trouvée</p> //En Affichage de message quand une erreur est lié à la catégorie
       )}
-      <Link to="/">Retour à la liste des catégories</Link>
+      <Link to="/">Retour à la liste des catégories</Link> 
     </div>
   );
 };
 
+//Exporte par défaut CategoryDetails
 export default CategoryDetails;

@@ -1,4 +1,4 @@
-// Routes React
+//Routes React
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CategorieList from './components/CategorieList'; //Route menant à CategorieList
@@ -16,5 +16,5 @@ function App() {
   );
 }
 
-//Retourne par défaut App
+//Exporte par défaut App
 export default App;

@@ -20,4 +20,5 @@ const CategorieList = () => {
   );
 };
 
+//Exporte par défaut CategorieList
 export default CategorieList;
